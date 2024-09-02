@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Scraping
 A Scrapping tsk which scraps data from a website
 =======
@@ -55,4 +54,3 @@ app/ - Contains FastAPI app, scraper logic, and utility functions.
 cache/ - Manages caching with Redis.
 db/ - Handles local JSON data storage.
 requirements.txt - Project dependencies.
->>>>>>> master
