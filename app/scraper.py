@@ -13,8 +13,7 @@ class Scraper:
 
     @retry
     def fetch_page(self, url):
-        print(url)
-        response = requests.get(url)
+        response = requests.get(url,proxies=self.proxy)
         response.raise_for_status()
 
         return response.text
@@ -25,7 +24,6 @@ class Scraper:
         # Extract title
         title_tag = soup.select_one("h2.woo-loop-product__title a")
         title = title_tag.text.strip() if title_tag else "N/A"
-        print(title)
          # Extract current price
         current_price_tag = soup.select_one("span.price span.woocommerce-Price-amount bdi")
         if current_price_tag:
@@ -35,7 +33,6 @@ class Scraper:
                 current_price = 0.0
         else:
             current_price = 0.0
-        print(f"Current Price: {current_price}")
 
         # Extract original price
 
